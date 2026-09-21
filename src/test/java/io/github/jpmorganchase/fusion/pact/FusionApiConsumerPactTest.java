@@ -12,6 +12,7 @@ import au.com.dius.pact.consumer.MockServer;
 import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
 import au.com.dius.pact.consumer.junit5.PactConsumerTestExt;
 import au.com.dius.pact.consumer.junit5.PactTestFor;
+import au.com.dius.pact.core.model.PactSpecVersion;
 import au.com.dius.pact.core.model.RequestResponsePact;
 import au.com.dius.pact.core.model.annotations.Pact;
 import io.github.jpmorganchase.fusion.Fusion;
@@ -191,7 +192,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listCatalogs")
+    @PactTestFor(pactMethod = "listCatalogs", pactVersion = PactSpecVersion.V3)
     void testListCatalogs(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -213,7 +214,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listCatalogsWhenNoneAreAvailable")
+    @PactTestFor(pactMethod = "listCatalogsWhenNoneAreAvailable", pactVersion = PactSpecVersion.V3)
     void testListCatalogsWhenNoneAreAvailable(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -223,7 +224,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listCatalogsWhenNotAuthorized")
+    @PactTestFor(pactMethod = "listCatalogsWhenNotAuthorized", pactVersion = PactSpecVersion.V3)
     void testListCatalogsWhenNotAuthorized(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer, "invalid-bearer-token");
@@ -237,7 +238,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "getCatalogResources")
+    @PactTestFor(pactMethod = "getCatalogResources", pactVersion = PactSpecVersion.V3)
     void testCatalogResources(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -259,7 +260,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "getCatalogResourcesWhenCatalogNotFound")
+    @PactTestFor(pactMethod = "getCatalogResourcesWhenCatalogNotFound", pactVersion = PactSpecVersion.V3)
     void testCatalogResourcesNotFound(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -275,7 +276,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listProducts")
+    @PactTestFor(pactMethod = "listProducts", pactVersion = PactSpecVersion.V3)
     void testListProducts(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -296,7 +297,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listProductsWhenNoneExist")
+    @PactTestFor(pactMethod = "listProductsWhenNoneExist", pactVersion = PactSpecVersion.V3)
     void testListProductsWhenNoneExist(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -306,7 +307,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listDatasets")
+    @PactTestFor(pactMethod = "listDatasets", pactVersion = PactSpecVersion.V3)
     void testListDatasets(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -327,7 +328,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listDatasetsWhenNoneExist")
+    @PactTestFor(pactMethod = "listDatasetsWhenNoneExist", pactVersion = PactSpecVersion.V3)
     void testListDatasetsWhenNoneExist(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -337,7 +338,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "getDatasetResources")
+    @PactTestFor(pactMethod = "getDatasetResources", pactVersion = PactSpecVersion.V3)
     void testDatasetResources(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -360,7 +361,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listDatasetMembers")
+    @PactTestFor(pactMethod = "listDatasetMembers", pactVersion = PactSpecVersion.V3)
     void testListDatasetMembers(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -381,7 +382,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listDatasetMembersWhenNoneExist")
+    @PactTestFor(pactMethod = "listDatasetMembersWhenNoneExist", pactVersion = PactSpecVersion.V3)
     void testListDatasetMembersWhenNoneExist(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -391,7 +392,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "getDatasetMemberResources")
+    @PactTestFor(pactMethod = "getDatasetMemberResources", pactVersion = PactSpecVersion.V3)
     void testDatasetMemberResources(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -417,7 +418,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listAttributes")
+    @PactTestFor(pactMethod = "listAttributes", pactVersion = PactSpecVersion.V3)
     void testListAttributes(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -439,7 +440,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listAttributes")
+    @PactTestFor(pactMethod = "listAttributes", pactVersion = PactSpecVersion.V3)
     void testListAttributeResources(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
@@ -469,7 +470,7 @@ public class FusionApiConsumerPactTest {
     }
 
     @Test
-    @PactTestFor(pactMethod = "listDistributions")
+    @PactTestFor(pactMethod = "listDistributions", pactVersion = PactSpecVersion.V3)
     void testListDistributions(MockServer mockServer) {
 
         givenInstanceOfFusionSdk(mockServer);
