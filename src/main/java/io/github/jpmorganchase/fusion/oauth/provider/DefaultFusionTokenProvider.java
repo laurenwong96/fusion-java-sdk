@@ -78,7 +78,6 @@ public class DefaultFusionTokenProvider implements FusionTokenProvider {
             if (null == sessionTokenProvider && null == credentials) {
                 Gson gson = new GsonBuilder().create();
                 try {
-                    // Java 8 doesn't allow specification of the charset if we use a FileReader
                     InputStreamReader fileReader = new InputStreamReader(
                             Files.newInputStream(Paths.get(configuration.getCredentialsPath())),
                             StandardCharsets.UTF_8);
